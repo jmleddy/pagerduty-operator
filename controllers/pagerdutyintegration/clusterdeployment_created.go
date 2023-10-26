@@ -24,12 +24,12 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 
 	hivev1 "github.com/openshift/hive/apis/hive/v1"
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
-	"github.com/openshift/pagerduty-operator/config"
-	"github.com/openshift/pagerduty-operator/pkg/kube"
-	"github.com/openshift/pagerduty-operator/pkg/localmetrics"
-	pd "github.com/openshift/pagerduty-operator/pkg/pagerduty"
-	"github.com/openshift/pagerduty-operator/pkg/utils"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
+	"github.com/jmleddy/pagerduty-operator/config"
+	"github.com/jmleddy/pagerduty-operator/pkg/kube"
+	"github.com/jmleddy/pagerduty-operator/pkg/localmetrics"
+	pd "github.com/jmleddy/pagerduty-operator/pkg/pagerduty"
+	"github.com/jmleddy/pagerduty-operator/pkg/utils"
 
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 )

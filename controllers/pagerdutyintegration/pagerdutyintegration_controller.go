@@ -32,11 +32,11 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
-	"github.com/openshift/pagerduty-operator/config"
-	"github.com/openshift/pagerduty-operator/pkg/localmetrics"
-	pd "github.com/openshift/pagerduty-operator/pkg/pagerduty"
-	"github.com/openshift/pagerduty-operator/pkg/utils"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
+	"github.com/jmleddy/pagerduty-operator/config"
+	"github.com/jmleddy/pagerduty-operator/pkg/localmetrics"
+	pd "github.com/jmleddy/pagerduty-operator/pkg/pagerduty"
+	"github.com/jmleddy/pagerduty-operator/pkg/utils"
 )
 
 const controllerName = "pagerdutyintegration"

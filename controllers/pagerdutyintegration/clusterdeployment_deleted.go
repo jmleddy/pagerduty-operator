@@ -20,11 +20,11 @@ import (
 	"strings"
 
 	hivev1 "github.com/openshift/hive/apis/hive/v1"
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
-	"github.com/openshift/pagerduty-operator/config"
-	metrics "github.com/openshift/pagerduty-operator/pkg/localmetrics"
-	pd "github.com/openshift/pagerduty-operator/pkg/pagerduty"
-	"github.com/openshift/pagerduty-operator/pkg/utils"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
+	"github.com/jmleddy/pagerduty-operator/config"
+	metrics "github.com/jmleddy/pagerduty-operator/pkg/localmetrics"
+	pd "github.com/jmleddy/pagerduty-operator/pkg/pagerduty"
+	"github.com/jmleddy/pagerduty-operator/pkg/utils"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

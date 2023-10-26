@@ -18,7 +18,7 @@ package pagerdutyintegration
 
 import (
 	hivev1 "github.com/openshift/hive/apis/hive/v1"
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

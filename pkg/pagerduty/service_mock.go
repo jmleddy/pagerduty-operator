@@ -12,7 +12,7 @@ import (
 	"net/http/httptest"
 
 	pd "github.com/PagerDuty/go-pagerduty"
-	"github.com/openshift/pagerduty-operator/pkg/utils"
+	"github.com/jmleddy/pagerduty-operator/pkg/utils"
 )
 
 const (

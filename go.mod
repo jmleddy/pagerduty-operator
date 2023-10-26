@@ -1,4 +1,4 @@
-module github.com/openshift/pagerduty-operator
+module github.com/jmleddy/pagerduty-operator
 
 go 1.21
 

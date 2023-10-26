@@ -4,10 +4,10 @@ import (
 	"strconv"
 
 	hivev1 "github.com/openshift/hive/apis/hive/v1"
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
-	"github.com/openshift/pagerduty-operator/config"
-	pd "github.com/openshift/pagerduty-operator/pkg/pagerduty"
-	"github.com/openshift/pagerduty-operator/pkg/utils"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
+	"github.com/jmleddy/pagerduty-operator/config"
+	pd "github.com/jmleddy/pagerduty-operator/pkg/pagerduty"
+	"github.com/jmleddy/pagerduty-operator/pkg/utils"
 )
 
 func (r *PagerDutyIntegrationReconciler) handleLimitedSupport(pdclient pd.Client, pdi *pagerdutyv1alpha1.PagerDutyIntegration, cd *hivev1.ClusterDeployment) error {

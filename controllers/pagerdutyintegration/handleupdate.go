@@ -18,13 +18,13 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/openshift/pagerduty-operator/config"
-	pd "github.com/openshift/pagerduty-operator/pkg/pagerduty"
+	"github.com/jmleddy/pagerduty-operator/config"
+	pd "github.com/jmleddy/pagerduty-operator/pkg/pagerduty"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
 
 	hivev1 "github.com/openshift/hive/apis/hive/v1"
-	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
+	pagerdutyv1alpha1 "github.com/jmleddy/pagerduty-operator/api/v1alpha1"
 )
 
 func (r *PagerDutyIntegrationReconciler) handleUpdate(pdclient pd.Client, pdi *pagerdutyv1alpha1.PagerDutyIntegration, cd *hivev1.ClusterDeployment) error {

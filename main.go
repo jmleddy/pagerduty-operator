@@ -45,6 +45,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
+	"sigs.k8s.io/controller-runtime/pkg/webhook"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -97,13 +98,16 @@ func main() {
 		setupLog.Info("running in fedramp environment.")
 	}
 
+	webhookServer := webhook.NewServer(webhook.Options{
+			Port:    9443,
+	})
+
 	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
 		Scheme:                 scheme,
-		MetricsBindAddress:     "0", // disable controller-runtime prometheus metrics
-		Port:                   9443,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
 		LeaderElectionID:       "3cdd1aa9.pagerduty.openshift.io",
+		WebhookServer:          webhookServer,
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")

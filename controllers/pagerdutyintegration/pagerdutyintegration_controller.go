@@ -31,7 +31,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
-	"sigs.k8s.io/controller-runtime/pkg/source"
 
 	pagerdutyv1alpha1 "github.com/openshift/pagerduty-operator/api/v1alpha1"
 	"github.com/openshift/pagerduty-operator/config"
@@ -279,22 +278,22 @@ func (r *PagerDutyIntegrationReconciler) requeueAfter(t time.Duration) (reconcil
 func (r *PagerDutyIntegrationReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&pagerdutyv1alpha1.PagerDutyIntegration{}).
-		Watches(&source.Kind{Type: &hivev1.ClusterDeployment{}}, &enqueueRequestForClusterDeployment{
+		Watches(&hivev1.ClusterDeployment{}, &enqueueRequestForClusterDeployment{
 			Client: mgr.GetClient(),
 		}).
-		Watches(&source.Kind{Type: &hivev1.SyncSet{}}, &enqueueRequestForClusterDeploymentOwner{
-			Client: mgr.GetClient(),
-			Scheme: mgr.GetScheme(),
-		}).
-		Watches(&source.Kind{Type: &corev1.ConfigMap{}}, &enqueueRequestForClusterDeploymentOwner{
+		Watches(&hivev1.SyncSet{}, &enqueueRequestForClusterDeploymentOwner{
 			Client: mgr.GetClient(),
 			Scheme: mgr.GetScheme(),
 		}).
-		Watches(&source.Kind{Type: &corev1.Secret{}}, &enqueueRequestForClusterDeploymentOwner{
+		Watches(&corev1.ConfigMap{}, &enqueueRequestForClusterDeploymentOwner{
 			Client: mgr.GetClient(),
 			Scheme: mgr.GetScheme(),
 		}).
-		Watches(&source.Kind{Type: &corev1.ConfigMap{}}, &enqueueRequestForConfigMap{
+		Watches(&corev1.Secret{}, &enqueueRequestForClusterDeploymentOwner{
+			Client: mgr.GetClient(),
+			Scheme: mgr.GetScheme(),
+		}).
+		Watches(&corev1.ConfigMap{}, &enqueueRequestForConfigMap{
 			Client: mgr.GetClient(),
 		}).
 		Complete(r)

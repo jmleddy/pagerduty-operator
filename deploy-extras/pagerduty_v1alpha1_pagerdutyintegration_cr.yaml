@@ -1,4 +1,4 @@
-apiVersion: pagerduty.openshift.io/v1alpha1
+apiVersion: pagerduty.10gen.io/v1alpha1
 kind: PagerDutyIntegration
 metadata:
   name: example-pagerdutyintegration

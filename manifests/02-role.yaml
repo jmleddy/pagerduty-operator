@@ -4,7 +4,7 @@ metadata:
   name: pagerduty-operator
 rules:
 - apiGroups:
-  - pagerduty.openshift.io
+  - pagerduty.10gen.io
   resources:
   - pagerdutyintegrations
   - pagerdutyintegrations/status

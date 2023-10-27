@@ -43,5 +43,5 @@ spec:
     - description: PagerDutyIntegration
       displayName: PagerDutyIntegration
       kind: PagerDutyIntegration
-      name: pagerdutyintegrations.pagerduty.openshift.io
+      name: pagerdutyintegrations.pagerduty.10gen.io
       version: v1alpha1

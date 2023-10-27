@@ -100,29 +100,15 @@ func (r *PagerDutyIntegrationReconciler) handleServiceOrchestration(pdclient pd.
 
 	orchestrationRuleConfigData := ""
 
-	if utils.IsRedHatInfrastructure(cd) {
-		orchestrationRuleConfigData, err = utils.LoadConfigMapData(r.Client,
-			serviceOrchestrationConfigMap, RedHatInfraServiceOrchestrationDataName)
+	orchestrationRuleConfigData, err = utils.LoadConfigMapData(r.Client,
+		serviceOrchestrationConfigMap, StandardServiceOrchestrationDataName)
 
-		if errors.IsNotFound(err) {
-			r.reqLogger.Info(fmt.Sprintf("found no service orchestration configmap rule for '%s', skipping next steps", RedHatInfraServiceOrchestrationDataName))
-			localmetrics.UpdateMetricPagerDutyServiceOrchestrationFailure(1, pdi.Name)
-			return nil
-		} else if err != nil {
-			return err
-		}
-	} else {
-		orchestrationRuleConfigData, err = utils.LoadConfigMapData(r.Client,
-			serviceOrchestrationConfigMap, StandardServiceOrchestrationDataName)
-
-		if errors.IsNotFound(err) {
-			r.reqLogger.Info(fmt.Sprintf("found no service orchestration configmap rule for '%s', skipping next steps", StandardServiceOrchestrationDataName))
-			localmetrics.UpdateMetricPagerDutyServiceOrchestrationFailure(1, pdi.Name)
-			return nil
-		} else if err != nil {
-			return err
-		}
-
+	if errors.IsNotFound(err) {
+		r.reqLogger.Info(fmt.Sprintf("found no service orchestration configmap rule for '%s', skipping next steps", StandardServiceOrchestrationDataName))
+		localmetrics.UpdateMetricPagerDutyServiceOrchestrationFailure(1, pdi.Name)
+		return nil
+	} else if err != nil {
+		return err
 	}
 
 	if pdData.ServiceOrchestrationRuleApplied != orchestrationRuleConfigData {

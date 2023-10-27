@@ -142,19 +142,6 @@ func GetClusterID(cd *hivev1.ClusterDeployment) string {
 	}
 }
 
-// IsRedHatInfrastructure returns whether or not a cluster is part of the Red Hat infrastructure
-func IsRedHatInfrastructure(cd *hivev1.ClusterDeployment) bool {
-	// clusterRHInfraLabel is the annotation key for Red Hat infrastructure clusters
-	clusterRHInfraLabel := "ext-pagerduty.openshift.io/rh-infra"
-
-	val, ok := cd.Labels[clusterRHInfraLabel]
-	if ok && val == "true" {
-		return true
-	}
-
-	return false
-}
-
 // Contains returns true if a slice contains a string, otherwise false
 func Contains(s []string, str string) bool {
 	for _, v := range s {

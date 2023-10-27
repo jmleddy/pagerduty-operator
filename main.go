@@ -110,7 +110,7 @@ func main() {
 		},
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "3cdd1aa9.pagerduty.openshift.io",
+		LeaderElectionID:       "3cdd1aa9.pagerduty.10gen.io",
 		WebhookServer:          webhookServer,
 	})
 	if err != nil {

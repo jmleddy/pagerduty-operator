@@ -28,11 +28,11 @@ const (
 	PagerDutyAPISecretKey  string = "PAGERDUTY_API_KEY" // #nosec G101 -- This is a false positive
 	PagerDutySecretKey     string = "PAGERDUTY_KEY"     // #nosec G101 -- This is a false positive
 	// PagerDutyFinalizerPrefix prefix used for finalizers on resources other than PDI
-	PagerDutyFinalizerPrefix string = "pd.managed.openshift.io/"
+	PagerDutyFinalizerPrefix string = "pd.managed.10gen.io/"
 	// PagerDutyIntegrationFinalizer name of finalizer used for PDI
-	PagerDutyIntegrationFinalizer string = "pd.managed.openshift.io/pagerduty"
+	PagerDutyIntegrationFinalizer string = "pd.managed.10gen.io/pagerduty"
 	// LegacyPagerDutyFinalizer name of legacy finalizer, always to be deleted
-	LegacyPagerDutyFinalizer string = "pd.managed.openshift.io/pagerduty"
+	LegacyPagerDutyFinalizer string = "pd.managed.10gen.io/pagerduty"
 	SecretSuffix             string = "-pd-secret"
 	ConfigMapSuffix          string = "-pd-config"
 

@@ -68,9 +68,9 @@ type PagerDutyIntegrationReconciler struct {
 	pdclient  func(APIKey string, controllerName string) pd.Client
 }
 
-//+kubebuilder:rbac:groups=pagerduty.pagerduty.openshift.io,resources=pagerdutyintegrations,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=pagerduty.pagerduty.openshift.io,resources=pagerdutyintegrations/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=pagerduty.pagerduty.openshift.io,resources=pagerdutyintegrations/finalizers,verbs=update
+//+kubebuilder:rbac:groups=pagerduty.pagerduty.10gen.io,resources=pagerdutyintegrations,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=pagerduty.pagerduty.10gen.io,resources=pagerdutyintegrations/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=pagerduty.pagerduty.10gen.io,resources=pagerdutyintegrations/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.

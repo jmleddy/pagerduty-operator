@@ -15,7 +15,7 @@
 package api
 
 import (
-	"github.com/openshift/pagerduty-operator/api/v1alpha1"
+	"github.com/jmleddy/pagerduty-operator/api/v1alpha1"
 )
 
 func init() {

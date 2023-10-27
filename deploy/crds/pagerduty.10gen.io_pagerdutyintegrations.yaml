@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: (devel)
-  name: pagerdutyintegrations.pagerduty.openshift.io
+  name: pagerdutyintegrations.pagerduty.10gen.io
 spec:
-  group: pagerduty.openshift.io
+  group: pagerduty.10gen.io
   names:
     kind: PagerDutyIntegration
     listKind: PagerDutyIntegrationList
